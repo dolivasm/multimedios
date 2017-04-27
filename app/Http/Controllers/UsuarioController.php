@@ -15,7 +15,13 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $users = \Multimedios\Usuario::All();
+        return view('usuario.usuarios', compact('users'));
+    }
+    
+    public function usuarios() {
+        $users = \Multimedios\Usuario::All();
+        return view('usuario.usuarios', compact('users'));
     }
 
     /**
@@ -38,9 +44,11 @@ class UsuarioController extends Controller
     {
        \Multimedios\Usuario::create([
            'name'=> $request['name'],
-           'password'=> $request['password']
+           'password'=> $request['password'],
+           //'password'=> bcrypt($request['password']),
            ]); 
-        return "Usuario Registrado";
+        //return "Usuario Registrado";
+        return view('welcome');
     }
 
     /**

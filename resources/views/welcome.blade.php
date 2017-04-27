@@ -15,7 +15,7 @@
         @section('content')
         <div class="container">
 	        <div class="row col-md-12 text-center" style="padding-bottom: 100px;">
-		        <h2>Bienvenido(a) Nombre</h2>
+		        <h2>Bienvenido(a)</h2>
 	        </div>
 	        <div class="row col-md-12">
 		        <div class="col-md-6 text-center">
