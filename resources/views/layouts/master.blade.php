@@ -28,7 +28,7 @@
     </div>
 </header><!-- /header -->
 
-<div id="main">
+<div id="main" class="container">
     <div id="content">
         @yield('content')
     </div>

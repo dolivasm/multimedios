@@ -3,9 +3,11 @@
 namespace Multimedios\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
+use Session;
+use Redirect;
 use Multimedios\Http\Requests;
-
+use Multimedios\Http\Requests\LoginRequest;
 class LogController extends Controller
 {
     /**
@@ -15,7 +17,7 @@ class LogController extends Controller
      */
     public function index()
     {
-        //
+        return view('welcome');
     }
 
     /**
@@ -34,9 +36,13 @@ class LogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LoginRequest $request)
     {
-        //
+        if(Auth::attempt(['name'=> $request['name'],'password'=> $request['password']])){
+            return Redirect::to('welcome');
+        }
+        Session::flash('message-error','No sea tan bruto');
+        return "error";
     }
 
     /**

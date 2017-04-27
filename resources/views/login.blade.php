@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
-	{!!Form::open(['route'=>'log.store', 'method'=>'post'])!!}
+	{!!Form::open(['route'=>'usuario.store', 'method'=>'post'])!!}
 	 <div class="container usuariocontainer">
 	<div class="row form-group">
 	    <div class="col-md-offset-4 col-md-4">
