@@ -11,11 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('/', 'UserController@index');
 
-Route:: resource('usuario','UsuarioController');
+/*Route::get('/', function () {
+    return view('login');
+});*/
+
+Route::get('welcome', 'FrontController@welcome');
+
+Route::resource('user','UserController');
 // Nos mostrará el formulario de login.
 Route::get('login', 'AuthController@showLogin');
 

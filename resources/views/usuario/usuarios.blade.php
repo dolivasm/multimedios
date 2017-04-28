@@ -12,17 +12,19 @@
     </head>
     <body>
     @section('content')
-        <table class="table">
+        <table class="table text-center">
             <thead>
-                <th>Nombre</th>
-                <th>Operaciones</th>
+                <th class="text-center">Nombre</th>
+                <th class="text-center">Operaciones</th>
             </thead>
             <tbody>
                 @foreach($users as $user)
                 <td>{{$user->name}}</td>
-                <td></td>
-                @endforeach
+                <td>
+                    {!!link_to_route('user.edit', $title = 'Editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary']);!!}
+                </td>
             </tbody>
+            @endforeach
         </table>
     @endsection
     </body>

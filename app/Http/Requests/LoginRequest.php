@@ -4,7 +4,9 @@ namespace Multimedios\Http\Requests;
 
 use Multimedios\Http\Requests\Request;
 
-class LoginRequest extends Request
+use Illuminate\Foundation\Http\FormRequest;
+
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +26,8 @@ class LoginRequest extends Request
     public function rules()
     {
         return [
-            //
+            'password'=>'required',
+            'name'=>'required',
         ];
     }
 }
